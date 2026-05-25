@@ -1,0 +1,209 @@
+/* Styling for modular OtpVerification component */
+
+.otp-step-content {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  animation: otpFadeIn 0.4s ease-out;
+}
+
+@keyframes otpFadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Back Button styling */
+.otp-back-btn {
+  background: transparent;
+  border: none;
+  color: var(--wa-text-secondary, #8696a0);
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  margin-bottom: 24px;
+  cursor: pointer;
+  transition: color 0.2s ease;
+  outline: none;
+}
+
+.otp-back-btn:hover {
+  color: var(--wa-text-primary, #e9edef);
+}
+
+/* Header Text */
+.otp-header {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.otp-header h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: var(--wa-text-primary, #e9edef);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+
+.otp-header p {
+  font-size: 15px;
+  color: var(--wa-text-secondary, #8696a0);
+  line-height: 1.5;
+}
+
+.otp-number-display {
+  font-weight: 600;
+  color: var(--wa-text-primary, #e9edef);
+  margin-top: 6px;
+  font-size: 16px;
+}
+
+/* Alert Box */
+.otp-error-alert {
+  background: rgba(234, 0, 56, 0.1);
+  border: 1px solid rgba(234, 0, 56, 0.25);
+  color: #ff4d6d;
+  border-radius: 12px;
+  padding: 12px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+  animation: otpAlertShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes otpAlertShake {
+  10%, 90% { transform: translate3d(-1px, 0, 0); }
+  20%, 80% { transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+  40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+/* Input Fields */
+.otp-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.otp-digit-field {
+  width: 54px;
+  height: 60px;
+  background: rgba(17, 27, 33, 0.6);
+  border: 1px solid var(--wa-border, rgba(134, 150, 160, 0.15));
+  border-radius: 12px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--wa-text-primary, #e9edef);
+  outline: none;
+  transition: all 0.25s ease;
+}
+
+.otp-digit-field:focus {
+  border-color: var(--wa-border-focus, #00a884);
+  box-shadow: 0 0 10px rgba(0, 168, 132, 0.25);
+  background: rgba(17, 27, 33, 0.85);
+}
+
+/* Resend / Timer */
+.otp-resend-section {
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 14px;
+  color: var(--wa-text-secondary, #8696a0);
+}
+
+.otp-timer-count {
+  color: var(--wa-green-light, #25d366);
+  font-weight: 600;
+}
+
+.otp-resend-btn {
+  background: transparent;
+  border: none;
+  color: var(--wa-green, #00a884);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;
+}
+
+.otp-resend-btn:hover:not(:disabled) {
+  color: var(--wa-green-hover, #00bfa5);
+  text-decoration: underline;
+}
+
+.otp-resend-btn:disabled {
+  color: var(--wa-text-secondary, #8696a0);
+  cursor: not-allowed;
+  font-weight: 500;
+}
+
+/* Submit CTA */
+.otp-submit-btn {
+  width: 100%;
+  height: 52px;
+  background: var(--wa-green, #00a884);
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 18px rgba(0, 168, 132, 0.25);
+  margin-top: 10px;
+  user-select: none;
+  outline: none;
+}
+
+.otp-submit-btn:hover:not(:disabled) {
+  background: var(--wa-green-hover, #00bfa5);
+  box-shadow: 0 6px 24px rgba(0, 168, 132, 0.4);
+  transform: translateY(-1px);
+}
+
+.otp-submit-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  box-shadow: 0 2px 10px rgba(0, 168, 132, 0.2);
+}
+
+.otp-submit-btn:disabled {
+  background: rgba(134, 150, 160, 0.15);
+  color: var(--wa-text-secondary, #8696a0);
+  cursor: not-allowed;
+  box-shadow: none;
+  transform: none;
+}
+
+/* Spinner Loader */
+.otp-spinner {
+  width: 20px;
+  height: 20px;
+  border: 3.5px solid rgba(255, 255, 255, 0.2);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: otpSpin 0.8s infinite linear;
+}
+
+@keyframes otpSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .otp-digit-field {
+    width: 42px;
+    height: 48px;
+    font-size: 18px;
+  }
+}
