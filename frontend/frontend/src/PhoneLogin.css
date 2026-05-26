@@ -71,16 +71,18 @@ body {
 /* Label */
 .card label {
   display: block;
-  margin-bottom: 10px;
   font-weight: bold;
   color: #333;
+  margin-bottom: -20px;
 }
 
 /* Input Section */
 .call-container {
   display: flex;
-  gap: 10px;
-  margin-bottom: 25px;
+  gap: 20px;
+  margin-top: 30px;
+  display: block;
+  
 }
 
 .left-small-card {
@@ -121,6 +123,7 @@ body {
   cursor: pointer;
   font-weight: bold;
   margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 .btn:hover {
@@ -137,4 +140,8 @@ body {
 #link:hover{
   text-decoration: underline;
   color: #1ebe5d;
+}
+.right-small-card{
+  width: 400px;
+  margin-top: 25px;
 }
