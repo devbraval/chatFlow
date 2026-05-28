@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons";
+import { text } from "@fortawesome/fontawesome-svg-core";
 
 export default function PhoneLogin() {
   const [number,setNumber] = useState("");
-  const onSumbit = async()=>{
+  const [showPass,setShowPass] = useState(false);
+  const toggle=()=>{
+    setShowPass(!showPass);
+  }
+  const onSumbit = async()=>{ 
     const response = await fetch()
   }
   return (
@@ -28,25 +33,23 @@ export default function PhoneLogin() {
             className="right-small-card"
             placeholder="Enter your Email"
             name="email"
-            onClick={(e)=>setNumber(e.target.value)}
+            onChange={(e)=>setNumber(e.target.value)}
           />
           <br />
           <br />
           <label htmlFor="password">Password</label>
-          <input type="password" name="password" id="password" className="right-small-card" placeholder="Enter your password" />
+          <input type={showPass?"text":"password"} name="password" id="password" className="right-small-card" placeholder="Enter your password" />
         </div>
         
-        <div>
-          <FontAwesomeIcon
-            icon={faEye}
+        <div className="show-password" onClick={toggle}>
+          <FontAwesomeIcon id="icon"
+            icon={showPass?faEyeSlash:faEye}
             style={{ color: "black" }}
             />
+            <p id="password-text">{showPass?"Hide Password":"Show Password"}</p>
         </div>
-
-
-
         <button className="btn">Next</button>
-        <h6>New user <Link to="/signup" id="link">Create Account here</Link></h6>
+        <h6>New user <Link to="/sign-up" id="link">Create Account here</Link></h6>
       </div>
     </div>
   );
