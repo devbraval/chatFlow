@@ -1,0 +1,57 @@
+.otp-page {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f4f4f4;
+}
+
+.otp-card {
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  width: 450px;
+}
+
+.otp-card h2 {
+  margin-bottom: 25px;
+}
+
+.otp-boxes {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.otp-boxes input {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 22px;
+  border: 2px solid #d1d5db;
+  border-radius: 10px;
+  outline: none;
+  transition: 0.2s;
+}
+
+.otp-boxes input:focus {
+  border-color: #4f46e5;
+}
+
+.otp-card button {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  background: #4f46e5;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.otp-card button:hover {
+  opacity: 0.9;
+}
